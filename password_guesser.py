@@ -22,8 +22,8 @@ def checkPassword(password):
     if secure != False:
         if len(items) >= 3:
             print("Your password is secure!")
-        else:
-            print("Your password is not secure!")
+    else:
+        print("Your password is not secure!")
             
 def menu():
     out = False
