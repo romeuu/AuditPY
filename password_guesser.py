@@ -1,3 +1,4 @@
+import re
 def checkPassword(password):
     # Flags for checking if a password is strong:
     # Minimum 8 characters length
@@ -26,7 +27,14 @@ def checkPassword(password):
         print("Your password is not secure!")
 
 def crackPasswords(name, birth, city):
-    print(name)
+
+    matched = re.match("[0-9]{8}", birth)
+    is_match = bool(matched)
+
+    if is_match != True:
+        print("Birth date is not correctly formatted, skipping this parameter...")
+
+    
 
             
 def menu():
@@ -44,7 +52,7 @@ def menu():
             break
         if option == 2:
             name = input("Please enter the target name: ")
-            birth = input("Enter the target birth: (DD/MM/YY)")
+            birth = input("Enter the target birth: (DDMMYYYY) ")
             city = input("Enter the city/village of the target: ")
 
             crackPasswords(name, birth, city)
