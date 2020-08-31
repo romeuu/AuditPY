@@ -24,6 +24,10 @@ def checkPassword(password):
             print("Your password is secure!")
     else:
         print("Your password is not secure!")
+
+def crackPasswords(name, birth, city):
+    print(name)
+
             
 def menu():
     out = False
@@ -31,13 +35,23 @@ def menu():
         print("\n---- OPTION MENU ----")
         print("1. Check if a password is secure.")
         print("2. Crack passwords.")
-        print("3. Stop.\n")
+        print("3. Generate a list of secure passwords.")
+        print("4. Stop.\n")
         option = int(input("Please choose an option: "))
         if option == 1:
             password = input("Please enter your password: ")
             checkPassword(password)
             break
-        if option == 3:
+        if option == 2:
+            name = input("Please enter the target name: ")
+            birth = input("Enter the target birth: (DD/MM/YY)")
+            city = input("Enter the city/village of the target: ")
+
+            crackPasswords(name, birth, city)
+            break
+
+
+        if option == 4:
             out = True
 
 menu()
