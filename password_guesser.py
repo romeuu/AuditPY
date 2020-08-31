@@ -5,10 +5,10 @@ def checkPassword(password):
     #   - Uppercase letters, Lowercase letters, numbers or symbols.
     counter = 0
     items = []
-    secure = False
+    secure = True
     
     if len(password) < 8:
-        secure = True
+        secure = False
     else:
         for x in password:
             if x.isupper():
@@ -19,7 +19,12 @@ def checkPassword(password):
                 items.append("Numeric")
     
     items = list(dict.fromkeys(items))
-    print(len(items))
+    
+    if secure != False:
+        if len(items) >= 3:
+            print("Your password is secure!")
+        else:
+            print("Your password is not secure!")
 
 
 def menu():
