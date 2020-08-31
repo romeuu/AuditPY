@@ -3,7 +3,6 @@ def checkPassword(password):
     # Minimum 8 characters length
     # Contains 3/4 of the following items: 
     #   - Uppercase letters, Lowercase letters, numbers or symbols.
-    counter = 0
     items = []
     secure = True
     
@@ -25,8 +24,7 @@ def checkPassword(password):
             print("Your password is secure!")
         else:
             print("Your password is not secure!")
-
-
+            
 def menu():
     out = False
     while out != True:
