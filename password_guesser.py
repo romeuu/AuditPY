@@ -1,4 +1,4 @@
-import re
+import re, random, string
 def checkPassword(password):
     # Flags for checking if a password is strong:
     # Minimum 8 characters length
@@ -34,8 +34,11 @@ def crackPasswords(name, birth, city):
     if is_match != True:
         print("Birth date is not correctly formatted, skipping this parameter...")
 
-    
 
+def securePasswords(length):
+    letters = string.ascii_letters
+    result_str = ''.join(random.choice(letters) for i in range(length))
+    return result_str
             
 def menu():
     out = False
@@ -57,7 +60,11 @@ def menu():
 
             crackPasswords(name, birth, city)
             break
-
+        if option == 3:
+            length = int(input("Please enter the length of your desired password: "))
+            for x in range(0,20):
+                print(securePasswords(length))
+            break
 
         if option == 4:
             out = True
